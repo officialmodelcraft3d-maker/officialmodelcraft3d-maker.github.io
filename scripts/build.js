@@ -46,8 +46,9 @@ const ld = [
     founder: { '@id': SITE_URL + '/#founder' },
     sameAs: [INSTAGRAM],
     areaServed: areas,
-    knowsAbout: ['Reverse engineering', '3D sculpting', '3D printing', 'CAD modelling', 'Product design', 'Product rendering', 'CNC machining', 'Injection moulding', 'Sheet metal design', 'Contract manufacturing'],
+    knowsAbout: ['CAD modelling', 'SolidWorks', 'Blender', 'Geomagic Design X', 'AutoCAD', 'Reverse engineering', '3D sculpting', '3D printing', 'Product design', 'Product rendering', 'CNC machining', 'Injection moulding', 'Sheet metal design', 'Contract manufacturing'],
     makesOffer: [
+      offer('CAD modelling', 'Parts, mechanical components, complex assemblies and 2D technical drawings.'),
       offer('Reverse engineering', 'Editable, production-ready CAD models rebuilt from photos, scans or physical parts.'),
       offer('3D sculpting', 'Characters, busts, trophies, jewellery and art pieces ready for 3D printing or casting.'),
       offer('Printable 3D models', 'Watertight, hollowed and supported STL/3MF/STEP files for FDM, SLA and SLS printing.'),
@@ -164,11 +165,15 @@ fs.writeFileSync(path.join(pub, 'llms.txt'), `# Model Craft 3D
 - Instagram: ${INSTAGRAM}
 
 ## Services
+- CAD modelling: parts, mechanical components, complex assemblies, 2D technical drawings
 - Reverse engineering: editable, production-ready CAD from photos, scans or physical parts (STEP, IGES, DWG)
 - 3D sculpting: characters, busts, trophies, jewellery, art pieces for printing or casting (ZTL, OBJ, STL)
 - Printable models: watertight, hollowed, supported STL/3MF/STEP for FDM, SLA, SLS
 - Product design and rendering: concepts, assemblies, exploded views, photoreal 4K renders and MP4
 - Manufacturing: CNC machining, injection moulding, sheet metal and castings via partners in China; 3D printing via partner shops in the USA; DFM check, QC photos, shipping
+
+## Software
+- SolidWorks, Blender, Geomagic Design X, AutoCAD
 
 ## Pricing and timing
 - Simple parts from about USD 60; most assemblies USD 250–1,500; every quote is fixed-price
