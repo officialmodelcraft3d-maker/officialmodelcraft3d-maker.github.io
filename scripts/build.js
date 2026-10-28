@@ -83,6 +83,15 @@ function offer(name, description) {
   return { '@type': 'Offer', itemOffered: { '@type': 'Service', name, description, provider: { '@id': SITE_URL + '/#business' }, areaServed: areas } };
 }
 
+// Pre-render the project grid so crawlers and answer engines see every project without JavaScript
+const projMatch = body.match(/const PROJECTS=\[([\s\S]*?)\n\];/);
+if (projMatch) {
+  const PROJECTS = JSON.parse('[' + projMatch[1].trim().replace(/,\s*$/, '') + ']');
+  const SHOW = 12;
+  const gridHtml = PROJECTS.map((p, i) => `<figure${i >= SHOW ? ' class="hidden-item"' : ''}><div class="ph"><img src="/portfolio/${p[0]}.jpg" alt="${p[1]} — 3D model by Model Craft 3D" loading="lazy" width="800" height="600"></div><figcaption><b>${p[1]}</b><span>${p[2]} · <i>Completed in ${p[3]}</i></span></figcaption></figure>`).join('');
+  body = body.replace('<div class="work" id="work-grid"></div>', `<div class="work" id="work-grid">${gridHtml}</div>`);
+}
+
 const head = `<!doctype html>
 <html lang="en">
 <head>
