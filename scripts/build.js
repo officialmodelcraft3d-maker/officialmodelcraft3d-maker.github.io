@@ -133,7 +133,7 @@ const head = `<!doctype html>
 <body>
 `;
 
-const html = head + body.replace(/src="(img|clients|portfolio|video)\//g, 'src="/$1/').replace(/poster="video\//g, 'poster="/video/').replace(/(src|href)="viewer\//g, '$1="/viewer/').replace(/src="portfolio\/\$\{/g, 'src="/portfolio/${') + `
+const html = head + body.replace(/src="(img|clients|portfolio|video)\//g, 'src="/$1/').replace(/poster="video\//g, 'poster="/video/').replace(/(src|href)="viewer\//g, '$1="/viewer/').replace(/`spin\//g, '`/spin/').replace(/src="portfolio\/\$\{/g, 'src="/portfolio/${') + `
 </body>
 </html>
 `;
