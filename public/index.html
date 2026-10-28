@@ -160,20 +160,6 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rg
 @media (max-width:760px){.tools{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.tools{grid-template-columns:1fr}}
 
-.exploded{background:var(--ink);color:#fff;overflow:hidden}
-.exploded .eyebrow{color:#9fbbff}.exploded .lede{color:#c7cee0}
-.ex-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
-.ex-copy{display:grid;gap:20px}
-.ex-copy h2{font-size:clamp(28px,3.4vw,38px);font-weight:700}
-.ex-slider{display:flex;align-items:center;gap:12px;font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#9fbbff}
-.ex-slider input{flex:1;accent-color:var(--orange);height:4px}
-.bom{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:14px;color:#c7cee0}
-.bom li{display:flex;align-items:center;gap:10px}.bom i{width:12px;height:12px;border-radius:3px;display:block;flex:none}
-.ex-stage{position:relative;aspect-ratio:1/1;max-width:100%;border-radius:16px;background:radial-gradient(circle at 50% 40%,#1b2340,#0b0f1d 70%);border:1px solid #232a40;overflow:hidden;cursor:grab}
-.ex-stage canvas{width:100%;height:100%;display:block}
-.ex-hint{position:absolute;right:14px;bottom:12px;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#6f7a99}
-@media (max-width:900px){.ex-grid{grid-template-columns:1fr}}
-
 /* founder */
 .founder{background:var(--bg-2);border-block:1px solid var(--line);overflow:hidden}
 .founder-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
@@ -457,26 +443,6 @@ footer{background:var(--ink);color:#aab3c8;padding-block:52px 32px;font-size:14p
   </div>
 </section>
 
-<section class="sec exploded" id="exploded" aria-labelledby="exploded-h">
-  <div class="wrap">
-    <div class="ex-grid">
-      <div class="ex-copy">
-        <span class="eyebrow">Exploded views</span>
-        <h2 id="exploded-h">Every assembly, pulled apart so your team can build it</h2>
-        <p class="lede">Each assembly ships with exploded views, balloon callouts and a bill of materials. Drag to rotate the sample gearbox; slide to explode it.</p>
-        <label class="ex-slider" for="explode"><span>Assembled</span><input id="explode" type="range" min="0" max="100" value="55" aria-label="Explode amount"><span>Exploded</span></label>
-        <ul class="bom" aria-label="Sample bill of materials">
-          <li><i style="background:var(--blue)"></i>Housing · aluminium 6061</li>
-          <li><i style="background:var(--orange)"></i>Spur gear · steel, 24T</li>
-          <li><i style="background:var(--green)"></i>Shaft · Ø12 h6</li>
-          <li><i style="background:var(--ink)"></i>Cover plate + M6 fasteners</li>
-        </ul>
-      </div>
-      <div class="ex-stage" id="stage"><canvas id="three" aria-label="Interactive exploded view of a sample gearbox assembly"></canvas><span class="ex-hint">drag to rotate</span></div>
-    </div>
-  </div>
-</section>
-
 <section class="sec software" id="software" aria-labelledby="software-h">
   <div class="wrap">
     <div class="sec-head" style="margin-bottom:28px">
@@ -682,7 +648,6 @@ footer{background:var(--ink);color:#aab3c8;padding-block:52px 32px;font-size:14p
   <span>WhatsApp</span>
 </a>
 
-<script src="/vendor/three.min.js"></script>
 <script>
 /* ---- hero gears (2D canvas line art) ---- */
 (function(){
@@ -708,49 +673,7 @@ footer{background:var(--ink);color:#aab3c8;padding-block:52px 32px;font-size:14p
   size();addEventListener('resize',()=>{size();draw();});reduce?draw():loop();
 })();
 
-/* ---- exploded gearbox (three.js) ---- */
-(function(){
-  const canvas=document.getElementById('three');if(!canvas||!window.THREE)return;
-  const stage=document.getElementById('stage');const slider=document.getElementById('explode');
-  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));
-  const scene=new THREE.Scene();const cam=new THREE.PerspectiveCamera(32,1,0.1,100);cam.position.set(6.8,4.6,7.8);cam.lookAt(0,0.4,0);
-  scene.add(new THREE.AmbientLight(0xffffff,.75));const key=new THREE.DirectionalLight(0xffffff,.9);key.position.set(4,8,5);scene.add(key);
-  const rim=new THREE.DirectionalLight(0x9fbbff,.5);rim.position.set(-5,3,-4);scene.add(rim);
-  const group=new THREE.Group();scene.add(group);
-  const C={blue:0x1e63ff,orange:0xff7a1a,green:0x25d366,ink:0xe8ecf5,steel:0xb8c2d6};
-  function part(geo,color,ey){const m=new THREE.Mesh(geo,new THREE.MeshStandardMaterial({color,metalness:.35,roughness:.45,transparent:true,opacity:.92}));
-    const e=new THREE.LineSegments(new THREE.EdgesGeometry(geo,20),new THREE.LineBasicMaterial({color:0x0b0f1d,transparent:true,opacity:.55}));
-    const g=new THREE.Group();g.add(m);g.add(e);g.userData.ey=ey;group.add(g);return g;}
-  function gearGeo(R,teeth,depth){const sh=new THREE.Shape();const n=teeth,tooth=R*.18;
-    for(let i=0;i<n;i++){const q=Math.PI*2/n,a0=i*q;const pts=[[R,a0],[R+tooth,a0+q*.18],[R+tooth,a0+q*.36],[R,a0+q*.54],[R,a0+q]];
-      pts.forEach(([r,a],k)=>{const x=Math.cos(a)*r,y=Math.sin(a)*r;(i===0&&k===0)?sh.moveTo(x,y):sh.lineTo(x,y);});}
-    sh.closePath();const hole=new THREE.Path();hole.absarc(0,0,R*.22,0,Math.PI*2,true);sh.holes.push(hole);
-    const g=new THREE.ExtrudeGeometry(sh,{depth,bevelEnabled:true,bevelThickness:.03,bevelSize:.03,bevelSegments:2});g.rotateX(-Math.PI/2);g.translate(0,depth/2,0);return g;}
-  // parts (resting y, explode offset)
-  const base=part(new THREE.BoxGeometry(3,.35,2.4),C.blue,0);base.position.y=0;
-  const housing=part(new THREE.BoxGeometry(2.4,1.1,1.9),C.blue,1.0);housing.position.y=.72;
-  const bore=part(new THREE.CylinderGeometry(.9,.9,.3,48),C.steel,1.9);bore.position.y=1.42;
-  const gear=part(gearGeo(.95,24,.3),C.orange,2.7);gear.position.y=1.75;
-  const shaft=part(new THREE.CylinderGeometry(.18,.18,2.6,32),C.green,3.6);shaft.position.y=1.6;
-  const cover=part(new THREE.BoxGeometry(2.4,.18,1.9),C.ink,4.4);cover.position.y=2.0;
-  const bolts=[];[[1,.75],[-1,.75],[1,-.75],[-1,-.75]].forEach(([x,z])=>{const b=part(new THREE.CylinderGeometry(.09,.09,.5,16),C.steel,5.2);b.position.set(x,2.3,z);const h=new THREE.Mesh(new THREE.CylinderGeometry(.16,.16,.12,6),new THREE.MeshStandardMaterial({color:C.steel,metalness:.5,roughness:.4}));h.position.y=.3;b.add(h);bolts.push(b);});
-  const parts=[base,housing,bore,gear,shaft,cover,...bolts];parts.forEach(p=>p.userData.y0=p.position.y);
-  // dashed explode lines
-  const lineMat=new THREE.LineDashedMaterial({color:0x9fbbff,dashSize:.12,gapSize:.08,transparent:true,opacity:.6});
-  const guide=new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,.2,0),new THREE.Vector3(0,7.5,0)]),lineMat);guide.computeLineDistances();group.add(guide);
-  let explode=slider?slider.value/100:.55,target=explode,rotY=0.6,velY=0,dragging=false,lastX=0;
-  slider&&slider.addEventListener('input',()=>{target=slider.value/100;});
-  stage.addEventListener('pointerdown',e=>{dragging=true;lastX=e.clientX;stage.style.cursor='grabbing';});
-  addEventListener('pointerup',()=>{dragging=false;stage.style.cursor='grab';});
-  addEventListener('pointermove',e=>{if(!dragging)return;velY=(e.clientX-lastX)*.01;rotY+=velY;lastX=e.clientX;});
-  function size(){const r=stage.getBoundingClientRect();renderer.setSize(r.width,r.height,false);cam.aspect=r.width/r.height;cam.updateProjectionMatrix();}
-  size();addEventListener('resize',size);
-  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function frame(){explode+=(target-explode)*.08;parts.forEach(p=>{p.position.y=p.userData.y0+p.userData.ey*explode*.55;});gear.rotation.y+=0.004;
-    if(!dragging){rotY+=reduce?0:0.0035+velY;velY*=.92;}group.rotation.y=rotY;group.position.y=-1.5-explode*1.5;guide.visible=explode>.05;
-    renderer.render(scene,cam);requestAnimationFrame(frame);}
-  frame();
-})();
+
 </script>
 
 <script>
