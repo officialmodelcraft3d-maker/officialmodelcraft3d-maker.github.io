@@ -160,6 +160,27 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rg
 @media (max-width:760px){.tools{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.tools{grid-template-columns:1fr}}
 
+.viewer3d{background:var(--ink);color:#fff;overflow:hidden}
+.viewer3d .eyebrow{color:#9fbbff}.viewer3d .lede{color:#c7cee0}
+.v-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:center}
+.v-copy{display:grid;gap:20px}
+.v-copy h2{font-size:clamp(28px,3.4vw,38px);font-weight:700}
+.v-steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;font-size:15px;color:#c7cee0}
+.v-steps li{display:flex;gap:12px;align-items:flex-start}.v-steps b{color:#fff}
+.v-steps i{flex:none;width:14px;height:14px;margin-top:5px;display:block}
+.v-steps i.o{background:var(--orange);border-radius:50%}.v-steps i.b{background:var(--blue);border-radius:3px}.v-steps i.g{background:var(--green);clip-path:polygon(50% 0,100% 100%,0 100%)}
+.v-tags{display:flex;flex-wrap:wrap;gap:8px}.v-tags span{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#9fbbff;border:1px solid #2a3350;border-radius:999px;padding:6px 10px}
+.v-stage{position:relative;aspect-ratio:4/3;max-width:100%;border-radius:16px;overflow:hidden;background:#fff;border:1px solid #232a40;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.v-stage img{width:100%;height:100%;object-fit:cover;display:block}
+.v-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}
+.v-load{position:absolute;inset:0;margin:auto;width:fit-content;height:fit-content;display:flex;align-items:center;gap:12px;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:10px 22px 10px 10px;font:600 15px var(--body);cursor:pointer;box-shadow:0 12px 30px -10px rgba(0,0,0,.5)}
+.v-load:hover{background:#1a2240}
+.v-play{width:44px;height:44px;border-radius:50%;background:var(--orange);display:grid;place-items:center}
+.v-full{position:absolute;right:14px;top:12px;font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:999px;padding:6px 10px;text-decoration:none}
+.v-badge{position:absolute;left:14px;bottom:12px;font:600 11px var(--mono);letter-spacing:.08em;color:#fff;background:var(--blue);border-radius:999px;padding:6px 10px}
+.v-stage.loaded .v-load,.v-stage.loaded img,.v-stage.loaded .v-badge{display:none}
+@media (max-width:900px){.v-grid{grid-template-columns:1fr}}
+
 /* founder */
 .founder{background:var(--bg-2);border-block:1px solid var(--line);overflow:hidden}
 .founder-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
@@ -309,6 +330,7 @@ footer{background:var(--ink);color:#aab3c8;padding-block:52px 32px;font-size:14p
     <a class="brand" href="#top" aria-label="Model Craft 3D home"><img src="/img/logo.png" alt="Model Craft 3D — Idea to Reality"></a>
     <ul>
       <li><a href="#services">Services</a></li>
+      <li><a href="#viewer">3D viewer</a></li>
       <li><a href="#software">Software</a></li>
       <li><a href="#founder">Founder</a></li>
       <li><a href="#work">Projects</a></li>
@@ -438,6 +460,30 @@ footer{background:var(--ink);color:#aab3c8;padding-block:52px 32px;font-size:14p
       <div class="mfg-item"><i class="o">CN</i><div><b>Manufacturing partners in China</b><span>CNC machining, injection moulding, sheet metal, castings. Small batches to volume runs.</span></div></div>
       <div class="mfg-item"><i class="b">US</i><div><b>3D printing shops in the USA</b><span>FDM, SLA, SLS and MJF prototypes printed locally and shipped to your door.</span></div></div>
       <div class="mfg-item"><i class="g">1</i><div><b>One point of contact</b><span>We design it, check it for manufacturability, get it made and handle QC photos before dispatch.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec viewer3d" id="viewer" aria-labelledby="viewer-h">
+  <div class="wrap">
+    <div class="v-grid">
+      <div class="v-copy">
+        <span class="eyebrow">Interactive 3D · exploded views</span>
+        <h2 id="viewer-h">Open a real assembly and pull it apart</h2>
+        <p class="lede">This is a live CAD model from the studio, a hoof trimmer assembly, in an interactive viewer. Rotate, zoom, section it, measure it and run the exploded view to see how every part fits.</p>
+        <ol class="v-steps">
+          <li><i class="o"></i><span>Click <b>Load 3D model</b> (about 25 MB, so it loads only when you ask).</span></li>
+          <li><i class="b"></i><span>Drag to rotate, scroll to zoom, right-drag to pan.</span></li>
+          <li><i class="g"></i><span>Use the <b>Explode</b> tool in the left toolbar to pull the assembly apart step by step.</span></li>
+        </ol>
+        <div class="v-tags"><span>Real studio model</span><span>Exploded view</span><span>Section &amp; measure</span><span>Full screen</span></div>
+      </div>
+      <div class="v-stage" id="vstage">
+        <img src="/img/hoof-trimmer-poster.jpg" alt="Hoof trimmer assembly, CAD model by Model Craft 3D" width="1200" height="900">
+        <button class="v-load" id="vload" type="button"><span class="v-play"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>Load 3D model</button>
+        <a class="v-full" href="/viewer/hoof-trimmer-assembly.html" target="_blank" rel="noopener">Open full screen ↗</a>
+        <span class="v-badge">HOOF TRIMMER ASSEMBLY · 3D VIEWER</span>
+      </div>
     </div>
   </div>
 </section>
@@ -675,6 +721,10 @@ footer{background:var(--ink);color:#aab3c8;padding-block:52px 32px;font-size:14p
 </script>
 
 <script>
+/* ---- interactive 3D viewer (eDrawings HTML export, loaded on demand) ---- */
+(function(){const st=document.getElementById('vstage'),b=document.getElementById('vload');if(!st||!b)return;
+  b.addEventListener('click',()=>{b.disabled=true;b.lastChild.textContent=' Loading model…';const f=document.createElement('iframe');f.src='viewer/hoof-trimmer-assembly.html';f.title='Interactive 3D viewer: hoof trimmer assembly';f.loading='eager';f.allow='fullscreen';f.addEventListener('load',()=>st.classList.add('loaded'));st.appendChild(f);});
+})();
 const PROJECTS=[
 ["precision-machined-aluminum-gearbox-housing","Precision-Machined Aluminum Gearbox Housing","CAD model + render","48 hours"],
 ["drone-assembly","Drone Assembly","Full assembly, 60+ parts","72 hours"],
