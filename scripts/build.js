@@ -159,7 +159,7 @@ fs.writeFileSync(path.join(pub, 'site.webmanifest'), JSON.stringify({ name: NAME
 // llms.txt — plain-language summary for AI answer engines (AEO / GEO)
 fs.writeFileSync(path.join(pub, 'llms.txt'), `# Model Craft 3D
 
-> Remote 3D design and manufacturing studio founded by Rashid Subhani (Product Design Engineer). Reverse engineering, 3D sculpting, printable models, product design and rendering, with manufacturing through partner factories in China (CNC, moulding, sheet metal, castings) and 3D printing shops in the USA. Standard turnaround 24–48 hours. Clients in the USA, UK, Canada and Australia. 500+ projects, 800+ clients, 4 years of industry experience including work in Australia.
+> Remote 3D design and manufacturing studio founded by Rashid Subhani (Product Design Engineer). Reverse engineering, 3D sculpting, printable models, product design and rendering, with manufacturing through partner factories in China (CNC, moulding, sheet metal, castings) and 3D printing shops in the USA. Standard turnaround 24–48 hours. Clients in the USA, UK, Canada and Australia. 500+ projects, 800+ clients, 4 years of industry experience, projects ranging from single machined parts and sheet metal brackets to complex assemblies, PCB enclosures and consumer products.
 
 - Website: ${SITE_URL}/
 - WhatsApp: ${PHONE}
