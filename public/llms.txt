@@ -9,12 +9,15 @@
 - Instagram: https://www.instagram.com/model_craft_3d_
 
 ## Services
-- CAD modelling: parts, mechanical components, complex assemblies, 2D technical drawings
-- Reverse engineering: editable, production-ready CAD from photos, scans or physical parts (STEP, IGES, DWG)
+- CAD modelling: parts, mechanical components, complex assemblies, 2D technical drawings (STEP, IGES, DWG, PDF)
+- Reverse engineering: photos, scans or physical part to production-ready CAD; STEP file provided (STEP, DWG)
 - 3D sculpting: characters, busts, trophies, jewellery, art pieces for printing or casting (ZTL, OBJ, STL)
-- Printable models: watertight, hollowed, supported STL/3MF/STEP for FDM, SLA, SLS
-- Product design and rendering: concepts, assemblies, exploded views, photoreal 4K renders and MP4
-- Manufacturing: CNC machining, injection moulding, sheet metal and castings via partners in China; 3D printing via partner shops in the USA; DFM check, QC photos, shipping
+- Printable models: custom parts and prototypes, ready to print (STL, 3MF)
+- Sheet metal parts: laser-cutting-ready parts with flat-pattern DXF (DXF, STEP)
+- Enclosure design: custom PCB enclosures for 3D printing and manufacturing (STEP, STL)
+- Injection moulding parts: moulding-ready plastic parts with 2D drawings (STEP, 2D drawing)
+- Rendering: realistic renders and Blender animation (4K PNG, MP4)
+- Manufacturing: CNC, injection moulding, sheet metal, castings via partners in China; 3D printing via partner shops in the USA; DFM check, QC photos, shipping
 
 ## Software
 - SolidWorks, Blender, Geomagic Design X, AutoCAD

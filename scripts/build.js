@@ -48,11 +48,14 @@ const ld = [
     areaServed: areas,
     knowsAbout: ['CAD modelling', 'SolidWorks', 'Blender', 'Geomagic Design X', 'AutoCAD', 'Reverse engineering', '3D sculpting', '3D printing', 'Product design', 'Product rendering', 'CNC machining', 'Injection moulding', 'Sheet metal design', 'Contract manufacturing'],
     makesOffer: [
-      offer('CAD modelling', 'Parts, mechanical components, complex assemblies and 2D technical drawings.'),
-      offer('Reverse engineering', 'Editable, production-ready CAD models rebuilt from photos, scans or physical parts.'),
-      offer('3D sculpting', 'Characters, busts, trophies, jewellery and art pieces ready for 3D printing or casting.'),
-      offer('Printable 3D models', 'Watertight, hollowed and supported STL/3MF/STEP files for FDM, SLA and SLS printing.'),
-      offer('Product design and rendering', 'Consumer product concepts, assemblies, exploded views and photoreal renders.'),
+      offer('CAD modelling', 'Parts, mechanical components, complex assemblies and 2D technical drawings. Output: STEP, IGES, DWG, PDF.'),
+      offer('Reverse engineering', 'Photos, scans or a physical part rebuilt as a production-ready CAD model. STEP file provided.'),
+      offer('3D sculpting', 'Characters, busts, trophies, jewellery and art pieces ready for printing or casting. Output: ZTL, OBJ, STL.'),
+      offer('Printable models', 'Custom parts and prototypes for 3D printing, checked and ready to print. Output: STL, 3MF.'),
+      offer('Sheet metal parts', 'Parts for laser cutting with flat-pattern DXF files for custom sheet metal parts. Output: DXF, STEP.'),
+      offer('Enclosure design', 'Custom PCB enclosures ready for 3D printing and manufacturing. Output: STEP, STL.'),
+      offer('Injection moulding parts', 'Injection-moulding-ready plastic parts with draft, wall thickness and 2D drawings. Output: STEP, 2D drawing.'),
+      offer('Rendering and animation', 'Realistic renders of prototypes and product animation in Blender. Output: 4K PNG, MP4.'),
       offer('Manufacturing and prototyping', 'CNC machining, injection moulding, sheet metal and castings through partners in China; 3D printing through partner shops in the USA; QC photos and shipping handled.')
     ],
     openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], opens: '09:00', closes: '22:00' }],
@@ -165,12 +168,15 @@ fs.writeFileSync(path.join(pub, 'llms.txt'), `# Model Craft 3D
 - Instagram: ${INSTAGRAM}
 
 ## Services
-- CAD modelling: parts, mechanical components, complex assemblies, 2D technical drawings
-- Reverse engineering: editable, production-ready CAD from photos, scans or physical parts (STEP, IGES, DWG)
+- CAD modelling: parts, mechanical components, complex assemblies, 2D technical drawings (STEP, IGES, DWG, PDF)
+- Reverse engineering: photos, scans or physical part to production-ready CAD; STEP file provided (STEP, DWG)
 - 3D sculpting: characters, busts, trophies, jewellery, art pieces for printing or casting (ZTL, OBJ, STL)
-- Printable models: watertight, hollowed, supported STL/3MF/STEP for FDM, SLA, SLS
-- Product design and rendering: concepts, assemblies, exploded views, photoreal 4K renders and MP4
-- Manufacturing: CNC machining, injection moulding, sheet metal and castings via partners in China; 3D printing via partner shops in the USA; DFM check, QC photos, shipping
+- Printable models: custom parts and prototypes, ready to print (STL, 3MF)
+- Sheet metal parts: laser-cutting-ready parts with flat-pattern DXF (DXF, STEP)
+- Enclosure design: custom PCB enclosures for 3D printing and manufacturing (STEP, STL)
+- Injection moulding parts: moulding-ready plastic parts with 2D drawings (STEP, 2D drawing)
+- Rendering: realistic renders and Blender animation (4K PNG, MP4)
+- Manufacturing: CNC, injection moulding, sheet metal, castings via partners in China; 3D printing via partner shops in the USA; DFM check, QC photos, shipping
 
 ## Software
 - SolidWorks, Blender, Geomagic Design X, AutoCAD
