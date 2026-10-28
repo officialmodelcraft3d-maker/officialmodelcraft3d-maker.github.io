@@ -26,6 +26,6 @@
 - Parametric 3D modelling, 2D to 3D conversion, assembly design, sheet metal design, 3D printing optimisation, CNC machining-ready files, engineering drawings to ANSI/ISO standards, KeyShot and Blender rendering
 
 ## Pricing and timing
-- Simple parts from about USD 60; most assemblies USD 250–1,500; every quote is fixed-price
+- Rate: USD 25 per hour, with an hours estimate agreed before work starts
 - Quote within 24 hours; most projects delivered in 24–48 hours depending on complexity
 - Two revision rounds included; NDA available

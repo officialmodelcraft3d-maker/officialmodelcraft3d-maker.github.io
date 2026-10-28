@@ -133,7 +133,7 @@ const head = `<!doctype html>
 <body>
 `;
 
-const html = head + body.replace(/src="(img|clients|portfolio|video)\//g, 'src="/$1/').replace(/poster="video\//g, 'poster="/video/').replace(/src="portfolio\/\$\{/g, 'src="/portfolio/${') + `
+const html = head + body.replace('https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js','/vendor/three.min.js').replace(/src="(img|clients|portfolio|video)\//g, 'src="/$1/').replace(/poster="video\//g, 'poster="/video/').replace(/src="portfolio\/\$\{/g, 'src="/portfolio/${') + `
 </body>
 </html>
 `;
@@ -185,7 +185,7 @@ fs.writeFileSync(path.join(pub, 'llms.txt'), `# Model Craft 3D
 - Parametric 3D modelling, 2D to 3D conversion, assembly design, sheet metal design, 3D printing optimisation, CNC machining-ready files, engineering drawings to ANSI/ISO standards, KeyShot and Blender rendering
 
 ## Pricing and timing
-- Simple parts from about USD 60; most assemblies USD 250–1,500; every quote is fixed-price
+- Rate: USD 25 per hour, with an hours estimate agreed before work starts
 - Quote within 24 hours; most projects delivered in 24–48 hours depending on complexity
 - Two revision rounds included; NDA available
 `);
