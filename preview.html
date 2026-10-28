@@ -83,7 +83,7 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rg
 .trusted .shape.circle{width:160px;height:160px;background:var(--orange);opacity:.18;left:-50px;top:-60px}
 .trusted .shape.sq{width:90px;height:90px;background:var(--green);opacity:.18;right:40px;bottom:-30px;transform:rotate(20deg)}
 .marquee{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.track{display:flex;gap:18px;width:max-content;animation:scroll 32s linear infinite}
+.track{display:flex;gap:18px;width:max-content;animation:scroll 48s linear infinite}
 .marquee:hover .track{animation-play-state:paused}
 .tile{flex:0 0 260px;height:130px;background:#070a14;border:1px solid #232a40;border-radius:12px;display:grid;place-items:center;overflow:hidden}
 .tile img{width:100%;height:100%;object-fit:cover;opacity:.9;transition:.2s}
@@ -137,6 +137,10 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rg
 .founder-copy{display:grid;gap:22px}
 .founder-copy h2{font-size:clamp(28px,3.4vw,38px);font-weight:700}
 .founder-copy .role{font:500 13px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+.skills{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.skills li{font-size:13px;font-weight:600;color:var(--ink-2);background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 12px;display:flex;align-items:center;gap:8px}
+.skills li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--blue)}
+.skills li:nth-child(3n+2)::before{background:var(--orange);border-radius:2px}.skills li:nth-child(3n)::before{background:var(--green);clip-path:polygon(50% 0,100% 100%,0 100%)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .stat{border-radius:14px;padding:18px 14px;color:#fff;display:grid;gap:2px;min-width:0}
 .stat b{font:800 26px/1 var(--display)}
@@ -306,12 +310,20 @@ footer{background:var(--ink);color:#aab3c8;padding-block:52px 32px;font-size:14p
     <div class="track" id="track">
       <div class="tile"><img src="clients/blacktop.png" alt="Blacktop Mechanical Solutions"></div>
       <div class="tile"><img src="clients/cityforest.png" alt="CityForest"></div>
+      <div class="tile"><img src="clients/motionmolds.png" alt="Motion Molds"></div>
       <div class="tile"><img src="clients/ftxbuilt.png" alt="FTX Built, Texas"></div>
+      <div class="tile"><img src="clients/worldwide.png" alt="WorldWide Technologies"></div>
       <div class="tile"><img src="clients/hlogo.png" alt="H monogram client"></div>
+      <div class="tile"><img src="clients/bswoosh.png" alt="B swoosh client"></div>
+      <div class="tile"><img src="clients/hurrican.png" alt="HurriCan"></div>
       <div class="tile"><img src="clients/blacktop.png" alt=""></div>
       <div class="tile"><img src="clients/cityforest.png" alt=""></div>
+      <div class="tile"><img src="clients/motionmolds.png" alt=""></div>
       <div class="tile"><img src="clients/ftxbuilt.png" alt=""></div>
+      <div class="tile"><img src="clients/worldwide.png" alt=""></div>
       <div class="tile"><img src="clients/hlogo.png" alt=""></div>
+      <div class="tile"><img src="clients/bswoosh.png" alt=""></div>
+      <div class="tile"><img src="clients/hurrican.png" alt=""></div>
     </div>
   </div>
 </section>
@@ -407,7 +419,10 @@ footer{background:var(--ink);color:#aab3c8;padding-block:52px 32px;font-size:14p
         <h2 id="founder-h">Rashid Subhani</h2>
         <p class="role">Product Design Engineer · CAD &amp; manufacturing specialist</p>
       </div>
-      <p class="lede">Industrial engineer with 4 years in product design, delivering projects ranging from single machined parts and sheet metal brackets to complex assemblies, PCB enclosures and consumer products. Every project is modelled by Rashid personally.</p>
+      <p class="lede">Design engineer specialising in mechanical modelling, assemblies and technical manufacturing drawings. Rashid delivers engineering-accurate designs ready for prototyping and production, on projects ranging from single machined parts and sheet metal brackets to complex assemblies, PCB enclosures and consumer products.</p>
+      <ul class="skills" aria-label="Expertise">
+        <li>Parametric 3D modelling</li><li>2D → 3D conversion</li><li>Assembly design</li><li>Sheet metal design</li><li>3D printing optimisation</li><li>CNC machining-ready files</li><li>Engineering drawings (ANSI / ISO)</li><li>KeyShot &amp; Blender rendering</li>
+      </ul>
       <div class="stats">
         <div class="stat o"><b>4 yrs</b><span>Industry experience</span></div>
         <div class="stat b"><b>500+</b><span>Projects completed</span></div>

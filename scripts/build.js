@@ -69,7 +69,7 @@ const ld = [
     jobTitle: 'Product Design Engineer',
     image: SITE_URL + '/img/founder.jpg',
     worksFor: { '@id': SITE_URL + '/#business' },
-    knowsAbout: ['Industrial engineering', 'Product design', 'Reverse engineering', 'Sheet metal', 'Assembly design', 'Manufacturing'],
+    knowsAbout: ['Parametric 3D modelling', '2D to 3D conversion', 'Assembly design', 'Sheet metal design', '3D printing optimisation', 'CNC machining-ready files', 'Engineering drawings (ANSI/ISO)', 'KeyShot rendering', 'Blender', 'SolidWorks', 'Reverse engineering', 'Manufacturing'],
     sameAs: [INSTAGRAM]
   },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs },
@@ -179,7 +179,10 @@ fs.writeFileSync(path.join(pub, 'llms.txt'), `# Model Craft 3D
 - Manufacturing: CNC, injection moulding, sheet metal, castings via partners in China; 3D printing via partner shops in the USA; DFM check, QC photos, shipping
 
 ## Software
-- SolidWorks, Blender, Geomagic Design X, AutoCAD
+- SolidWorks, Blender, Geomagic Design X, AutoCAD, KeyShot
+
+## Founder expertise
+- Parametric 3D modelling, 2D to 3D conversion, assembly design, sheet metal design, 3D printing optimisation, CNC machining-ready files, engineering drawings to ANSI/ISO standards, KeyShot and Blender rendering
 
 ## Pricing and timing
 - Simple parts from about USD 60; most assemblies USD 250–1,500; every quote is fixed-price
