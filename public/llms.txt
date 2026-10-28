@@ -1,6 +1,6 @@
 # Model Craft 3D
 
-> Remote 3D design studio founded by Rashid Subhani (Product Design Engineer). SolidWorks CAD modelling, reverse engineering, 3D sculpting, product rendering and manufacturing-ready files (STEP, STL, 3MF, DWG). Standard turnaround 24–48 hours. Clients in the USA, UK, Canada and Australia. 500+ projects, 800+ clients, 4 years of industry experience including work in Australia.
+> Remote 3D design and manufacturing studio founded by Rashid Subhani (Product Design Engineer). Reverse engineering, 3D sculpting, printable models, product design and rendering, with manufacturing through partner factories in China (CNC, moulding, sheet metal, castings) and 3D printing shops in the USA. Standard turnaround 24–48 hours. Clients in the USA, UK, Canada and Australia. 500+ projects, 800+ clients, 4 years of industry experience including work in Australia.
 
 - Website: https://modelcraft3d.com/
 - WhatsApp: +1-575-418-4265
@@ -9,10 +9,11 @@
 - Instagram: https://www.instagram.com/model_craft_3d_
 
 ## Services
-- SolidWorks CAD modelling: parts, assemblies, GD&T drawings (SLDPRT, SLDASM, STEP, IGES, DWG)
-- Reverse engineering: editable CAD from photos, scans or physical parts
-- 3D sculpting: characters, busts, trophies, art pieces for printing or casting (ZTL, OBJ, STL)
-- Product rendering and print-ready files: photoreal renders, exploded views, STL/STEP/3MF
+- Reverse engineering: editable, production-ready CAD from photos, scans or physical parts (STEP, IGES, DWG)
+- 3D sculpting: characters, busts, trophies, jewellery, art pieces for printing or casting (ZTL, OBJ, STL)
+- Printable models: watertight, hollowed, supported STL/3MF/STEP for FDM, SLA, SLS
+- Product design and rendering: concepts, assemblies, exploded views, photoreal 4K renders and MP4
+- Manufacturing: CNC machining, injection moulding, sheet metal and castings via partners in China; 3D printing via partner shops in the USA; DFM check, QC photos, shipping
 
 ## Pricing and timing
 - Simple parts from about USD 60; most assemblies USD 250–1,500; every quote is fixed-price

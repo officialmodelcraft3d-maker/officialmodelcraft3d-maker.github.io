@@ -6,7 +6,7 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const SITE_URL = (process.env.SITE_URL || 'https://modelcraft3d.com').replace(/\/$/, '');
 const NAME = 'Model Craft 3D';
-const DESC = 'SolidWorks CAD modelling, reverse engineering, 3D sculpting and product rendering with a 24–48 hour turnaround. Remote studio serving the USA, UK, Canada and Australia. Free quote within 24 hours.';
+const DESC = 'Reverse engineering, 3D sculpting, printable models and product rendering with a 24–48 hour turnaround, plus manufacturing through partner shops in China and the USA. Serving the USA, UK, Canada and Australia. Free quote within 24 hours.';
 const PHONE = '+1-575-418-4265';
 const EMAIL = 'Official.modelcraft3d@gmail.com';
 const INSTAGRAM = 'https://www.instagram.com/model_craft_3d_';
@@ -46,12 +46,13 @@ const ld = [
     founder: { '@id': SITE_URL + '/#founder' },
     sameAs: [INSTAGRAM],
     areaServed: areas,
-    knowsAbout: ['SolidWorks', 'CAD modelling', 'Reverse engineering', '3D sculpting', 'Product rendering', '3D printing', 'CNC machining', 'Sheet metal design', 'GD&T drawings'],
+    knowsAbout: ['Reverse engineering', '3D sculpting', '3D printing', 'CAD modelling', 'Product design', 'Product rendering', 'CNC machining', 'Injection moulding', 'Sheet metal design', 'Contract manufacturing'],
     makesOffer: [
-      offer('SolidWorks CAD modelling', 'Parametric parts, assemblies and 2D manufacturing drawings.'),
-      offer('Reverse engineering', 'Editable CAD models rebuilt from photos, scans or physical parts.'),
-      offer('3D sculpting', 'Characters, busts, trophies and art pieces ready for 3D printing or casting.'),
-      offer('Product rendering and print-ready files', 'Photoreal renders, exploded views, STL/STEP/3MF files.')
+      offer('Reverse engineering', 'Editable, production-ready CAD models rebuilt from photos, scans or physical parts.'),
+      offer('3D sculpting', 'Characters, busts, trophies, jewellery and art pieces ready for 3D printing or casting.'),
+      offer('Printable 3D models', 'Watertight, hollowed and supported STL/3MF/STEP files for FDM, SLA and SLS printing.'),
+      offer('Product design and rendering', 'Consumer product concepts, assemblies, exploded views and photoreal renders.'),
+      offer('Manufacturing and prototyping', 'CNC machining, injection moulding, sheet metal and castings through partners in China; 3D printing through partner shops in the USA; QC photos and shipping handled.')
     ],
     openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], opens: '09:00', closes: '22:00' }],
     potentialAction: { '@type': 'ReserveAction', target: BOOKING, name: 'Book a free 20-minute consultation' }
@@ -64,7 +65,7 @@ const ld = [
     jobTitle: 'Product Design Engineer',
     image: SITE_URL + '/img/founder.jpg',
     worksFor: { '@id': SITE_URL + '/#business' },
-    knowsAbout: ['SolidWorks', 'Industrial engineering', 'Product design', 'Sheet metal', 'Assembly design'],
+    knowsAbout: ['Industrial engineering', 'Product design', 'Reverse engineering', 'Sheet metal', 'Assembly design', 'Manufacturing'],
     sameAs: [INSTAGRAM]
   },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs },
@@ -97,7 +98,7 @@ const head = `<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Model Craft 3D | SolidWorks CAD, Reverse Engineering &amp; 3D Sculpting — USA, UK, Canada, Australia</title>
+<title>Model Craft 3D | Reverse Engineering, 3D Sculpting, Printable Models &amp; Manufacturing — USA, UK, Canada, Australia</title>
 <meta name="description" content="${DESC}">
 <link rel="canonical" href="${SITE_URL}/">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -154,7 +155,7 @@ fs.writeFileSync(path.join(pub, 'site.webmanifest'), JSON.stringify({ name: NAME
 // llms.txt — plain-language summary for AI answer engines (AEO / GEO)
 fs.writeFileSync(path.join(pub, 'llms.txt'), `# Model Craft 3D
 
-> Remote 3D design studio founded by Rashid Subhani (Product Design Engineer). SolidWorks CAD modelling, reverse engineering, 3D sculpting, product rendering and manufacturing-ready files (STEP, STL, 3MF, DWG). Standard turnaround 24–48 hours. Clients in the USA, UK, Canada and Australia. 500+ projects, 800+ clients, 4 years of industry experience including work in Australia.
+> Remote 3D design and manufacturing studio founded by Rashid Subhani (Product Design Engineer). Reverse engineering, 3D sculpting, printable models, product design and rendering, with manufacturing through partner factories in China (CNC, moulding, sheet metal, castings) and 3D printing shops in the USA. Standard turnaround 24–48 hours. Clients in the USA, UK, Canada and Australia. 500+ projects, 800+ clients, 4 years of industry experience including work in Australia.
 
 - Website: ${SITE_URL}/
 - WhatsApp: ${PHONE}
@@ -163,10 +164,11 @@ fs.writeFileSync(path.join(pub, 'llms.txt'), `# Model Craft 3D
 - Instagram: ${INSTAGRAM}
 
 ## Services
-- SolidWorks CAD modelling: parts, assemblies, GD&T drawings (SLDPRT, SLDASM, STEP, IGES, DWG)
-- Reverse engineering: editable CAD from photos, scans or physical parts
-- 3D sculpting: characters, busts, trophies, art pieces for printing or casting (ZTL, OBJ, STL)
-- Product rendering and print-ready files: photoreal renders, exploded views, STL/STEP/3MF
+- Reverse engineering: editable, production-ready CAD from photos, scans or physical parts (STEP, IGES, DWG)
+- 3D sculpting: characters, busts, trophies, jewellery, art pieces for printing or casting (ZTL, OBJ, STL)
+- Printable models: watertight, hollowed, supported STL/3MF/STEP for FDM, SLA, SLS
+- Product design and rendering: concepts, assemblies, exploded views, photoreal 4K renders and MP4
+- Manufacturing: CNC machining, injection moulding, sheet metal and castings via partners in China; 3D printing via partner shops in the USA; DFM check, QC photos, shipping
 
 ## Pricing and timing
 - Simple parts from about USD 60; most assemblies USD 250–1,500; every quote is fixed-price
