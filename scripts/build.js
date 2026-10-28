@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
-const SITE_URL = (process.env.SITE_URL || 'https://officialmodelcraft3d-maker.github.io').replace(/\/$/, '');
+const SITE_URL = (process.env.SITE_URL || 'https://modelcraft3d.com').replace(/\/$/, '');
 const NAME = 'Model Craft 3D';
 const DESC = 'SolidWorks CAD modelling, reverse engineering, 3D sculpting and product rendering with a 24–48 hour turnaround. Remote studio serving the USA, UK, Canada and Australia. Free quote within 24 hours.';
 const PHONE = '+1-575-418-4265';
