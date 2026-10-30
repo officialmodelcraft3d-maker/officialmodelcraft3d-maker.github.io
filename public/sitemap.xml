@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>https://modelcraft3d.com/</loc><lastmod>2026-10-28</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+  <url><loc>https://modelcraft3d.com/</loc><lastmod>2026-10-30</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
     <image:image><image:loc>https://modelcraft3d.com/portfolio/autocad-planta-1er-nivel-model.jpg</image:loc><image:title>autocad planta 1er nivel model — 3D model by Model Craft 3D</image:title></image:image>
     <image:image><image:loc>https://modelcraft3d.com/portfolio/autocad-screenshot-2025-12-08-124638.jpg</image:loc><image:title>autocad screenshot 2025 12 08 124638 — 3D model by Model Craft 3D</image:title></image:image>
     <image:image><image:loc>https://modelcraft3d.com/portfolio/autocad-wheelchair-for-2d.jpg</image:loc><image:title>autocad wheelchair for 2d — 3D model by Model Craft 3D</image:title></image:image>
@@ -58,4 +58,14 @@
     <image:image><image:loc>https://modelcraft3d.com/portfolio/tripod-stand.jpg</image:loc><image:title>tripod stand — 3D model by Model Craft 3D</image:title></image:image>
     <image:image><image:loc>https://modelcraft3d.com/portfolio/valve.jpg</image:loc><image:title>valve — 3D model by Model Craft 3D</image:title></image:image>
   </url>
+  <url><loc>https://modelcraft3d.com/cad-design-services-usa/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modelcraft3d.com/cad-design-services-uk/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modelcraft3d.com/cad-design-services-canada/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modelcraft3d.com/cad-design-services-australia/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modelcraft3d.com/cad-modelling-services/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modelcraft3d.com/reverse-engineering-services/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modelcraft3d.com/3d-sculpting-services/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modelcraft3d.com/3d-printing-design-services/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modelcraft3d.com/sheet-metal-and-injection-moulding-design/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://modelcraft3d.com/product-rendering-services/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

@@ -229,10 +229,16 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rg
 /* regions */
 .regions{background:var(--bg-2);border-block:1px solid var(--line)}
 .region-row{display:flex;flex-wrap:wrap;gap:12px}
-.chip{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 18px 10px 12px;font-weight:600;font-size:15px}
+.chip{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 18px 10px 12px;font-weight:600;font-size:15px;text-decoration:none;color:var(--ink)}a.chip:hover{border-color:var(--blue)}
 .chip i{width:22px;height:22px;border-radius:50%;display:block}
 .chip i.b{background:var(--blue)}.chip i.o{background:var(--orange)}.chip i.g{background:var(--green)}.chip i.k{background:var(--ink)}
 .chip small{font:400 12px var(--mono);color:var(--muted)}
+
+.quick{background:var(--bg-2);border-block:1px solid var(--line)}
+.qa{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.qa article{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;display:grid;gap:8px;align-content:start}
+.qa h3{font-size:17px;font-weight:700}.qa p{font-size:14px;color:var(--ink-2)}
+@media (max-width:900px){.qa{grid-template-columns:1fr}}
 
 /* faq */
 .faq{display:grid;gap:0;border-top:1px solid var(--line)}
@@ -567,10 +573,10 @@ footer{background:var(--ink);color:#aab3c8;padding-block:52px 32px;font-size:14p
       <h2 id="regions-h">Clients in 4 countries, hours that overlap yours</h2>
     </div>
     <div class="region-row">
-      <div class="chip"><i class="b"></i>USA <small>ANSI · inch/metric</small></div>
-      <div class="chip"><i class="o"></i>UK <small>BS 8888 · metric</small></div>
-      <div class="chip"><i class="g"></i>Canada <small>inch/metric</small></div>
-      <div class="chip"><i class="k"></i>Australia <small>AS 1100 · metric</small></div>
+      <a class="chip" href="cad-design-services-usa/"><i class="b"></i>USA <small>ANSI · inch/metric</small></a>
+      <a class="chip" href="cad-design-services-uk/"><i class="o"></i>UK <small>BS 8888 · metric</small></a>
+      <a class="chip" href="cad-design-services-canada/"><i class="g"></i>Canada <small>inch/metric</small></a>
+      <a class="chip" href="cad-design-services-australia/"><i class="k"></i>Australia <small>AS 1100 · metric</small></a>
     </div>
   </div>
 </section>
@@ -590,6 +596,23 @@ footer{background:var(--ink);color:#aab3c8;padding-block:52px 32px;font-size:14p
       <p>Choose a time on Rashid's Google Calendar. You'll get a Google Meet link by email straight away.</p>
       <a class="btn btn-orange" href="https://calendar.app.google/p6tHS3K8GBUi3tX96" target="_blank" rel="noopener">Open booking calendar →</a>
       <small>MON – SAT · USA, UK, CANADA &amp; AUSTRALIA HOURS</small>
+    </div>
+  </div>
+</section>
+
+<section class="sec quick" id="answers" aria-labelledby="answers-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Quick answers</span>
+      <h2 id="answers-h">The short version</h2>
+    </div>
+    <div class="qa">
+      <article><h3>What does Model Craft 3D do?</h3><p>Model Craft 3D is a remote design studio that turns sketches, photos, scans and ideas into production-ready CAD models, 3D-printable files, sheet metal and moulded parts, sculptures and photoreal renders, and can have the parts manufactured through partner shops in China and the USA.</p></article>
+      <article><h3>How much does it cost?</h3><p>USD 25 per hour. Every project starts with an hours estimate, so the total is agreed before any work begins. There are no packages or minimums.</p></article>
+      <article><h3>How fast is delivery?</h3><p>Most parts, drawings and printable models are delivered within 24 to 48 hours of an approved estimate. Multi-part assemblies and detailed sculptures take 3 to 7 days.</p></article>
+      <article><h3>Where are your clients?</h3><p>Mainly the United States, United Kingdom, Canada and Australia. Working hours overlap each region, drawings follow the local standard (ASME, BS 8888, AS 1100) and invoices can be in USD, GBP, CAD or AUD.</p></article>
+      <article><h3>Which files will I receive?</h3><p>STEP and native CAD for parts and assemblies, STL or 3MF for printing, DXF for laser cutting, DWG or PDF drawings, and 4K PNG or MP4 for renders and animations.</p></article>
+      <article><h3>How do I start?</h3><p>Message +1 (575) 418-4265 on WhatsApp, email Official.modelcraft3d@gmail.com, or send the quote form with a sketch or photo. You get an estimate within a few hours and a reply within 24.</p></article>
     </div>
   </div>
 </section>
@@ -652,8 +675,8 @@ footer{background:var(--ink);color:#aab3c8;padding-block:52px 32px;font-size:14p
         <div class="logo-box"><img src="img/logo.png" alt="Model Craft 3D"></div>
         <p>Remote 3D design and manufacturing studio. Reverse engineering, sculpture, printable models and rendering, with manufacturing partners in China and the USA.</p>
       </div>
-      <div><h4>Services</h4><ul><li><a href="#services">CAD modelling</a></li><li><a href="#services">Reverse engineering</a></li><li><a href="#services">3D sculpting</a></li><li><a href="#services">Printable models</a></li><li><a href="#services">Sheet metal &amp; enclosures</a></li><li><a href="#services">Injection moulding</a></li><li><a href="#services">Rendering</a></li></ul></div>
-      <div><h4>Studio</h4><ul><li><a href="#founder">Founder</a></li><li><a href="#work">Projects</a></li><li><a href="#process">Process</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="cad-modelling-services/">CAD modelling</a></li><li><a href="reverse-engineering-services/">Reverse engineering</a></li><li><a href="3d-sculpting-services/">3D sculpting</a></li><li><a href="3d-printing-design-services/">Printable models &amp; enclosures</a></li><li><a href="sheet-metal-and-injection-moulding-design/">Sheet metal &amp; injection moulding</a></li><li><a href="product-rendering-services/">Rendering &amp; animation</a></li></ul></div>
+      <div><h4>Regions</h4><ul><li><a href="cad-design-services-usa/">CAD design USA</a></li><li><a href="cad-design-services-uk/">CAD design UK</a></li><li><a href="cad-design-services-canada/">CAD design Canada</a></li><li><a href="cad-design-services-australia/">CAD design Australia</a></li><li><a href="#founder">Founder</a></li><li><a href="#faq">FAQ</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="tel:+15754184265">Call +1 (575) 418-4265</a></li><li><a href="https://wa.me/15754184265" target="_blank" rel="noopener">WhatsApp +1 (575) 418-4265</a></li><li><a href="mailto:Official.modelcraft3d@gmail.com">Official.modelcraft3d@gmail.com</a></li><li><a href="https://www.instagram.com/model_craft_3d_" target="_blank" rel="noopener">Instagram</a></li><li><a href="#book">Book a call</a></li></ul></div>
     </div>
     <div class="foot-bottom"><span>© 2026 MODEL CRAFT 3D · IDEA TO REALITY</span><span>USA · UK · CANADA · AUSTRALIA</span></div>
