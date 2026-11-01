@@ -370,3 +370,29 @@ ${pageUrls.map(u => '- ' + u).join('\n')}
 fs.writeFileSync(path.join(pub, '404.html'), `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found | Model Craft 3D</title><style>body{font-family:system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0;color:#0f1424;text-align:center;padding:24px}a{color:#0a4fd6}</style></head><body><div><img src="/img/logo.png" alt="Model Craft 3D" style="height:60px"><h1>Page not found</h1><p><a href="/">Back to the homepage</a></p></div></body></html>`);
 
 console.log('Built public/index.html for', SITE_URL, '| FAQ entries:', faqs.length);
+
+// ---------- Google Ads tag + conversions (injected into every HTML page) ----------
+(function injectAds() {
+  const ADS = require('./ads-config');
+  const files = [];
+  (function walk(d) { for (const f of fs.readdirSync(d)) { const p = path.join(d, f); const st = fs.statSync(p); if (st.isDirectory()) { if (!['portfolio','clients','video','spin','img','viewer'].includes(f)) walk(p); } else if (f.endsWith('.html')) files.push(p); } })(path.join(ROOT, 'public'));
+  let snippet = '';
+  if (ADS.id) {
+    const L = ADS.labels || {};
+    const send = k => L[k] ? `gtag('event','conversion',{send_to:'${ADS.id}/${L[k]}'});` : '';
+    snippet = `<script async src="https://www.googletagmanager.com/gtag/js?id=${ADS.id}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${ADS.id}');
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';
+if(h.indexOf('tel:')===0){${send('call')}}else if(h.indexOf('wa.me')>-1){${send('whatsapp')}}else if(h.indexOf('calendar.app.google')>-1){${send('booking')}}},true);
+if(/\\/thank-you(\\.html)?$/.test(location.pathname)){${send('lead')}}
+</script>`;
+  }
+  const re = /<!--ADS-START-->[\s\S]*?<!--ADS-END-->\n?/;
+  for (const f of files) {
+    let h = fs.readFileSync(f, 'utf8');
+    const blk = `<!--ADS-START-->${snippet ? '\n' + snippet + '\n' : ''}<!--ADS-END-->\n`;
+    if (re.test(h)) h = h.replace(re, blk); else if (h.includes('</head>')) h = h.replace('</head>', blk + '</head>'); else continue;
+    fs.writeFileSync(f, h);
+  }
+  console.log('Ads tag:', ADS.id ? `${ADS.id} on ${files.length} pages` : 'not configured yet');
+})();
