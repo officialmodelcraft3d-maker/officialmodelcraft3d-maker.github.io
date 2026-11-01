@@ -8,7 +8,7 @@ const SITE_URL = (process.env.SITE_URL || 'https://modelcraft3d.com').replace(/\
 const NAME = 'Model Craft 3D';
 const DESC = 'Reverse engineering, 3D sculpting, printable models and product rendering with a 24–48 hour turnaround, plus manufacturing through partner shops in China and the USA. Serving the USA, UK, Canada and Australia. Free quote within 24 hours.';
 const PHONE = '+1-575-418-4265';
-const EMAIL = 'Official.modelcraft3d@gmail.com';
+const EMAIL = 'rashid@modelcraft3d.com';
 const INSTAGRAM = 'https://www.instagram.com/model_craft_3d_';
 const BOOKING = 'https://calendar.app.google/p6tHS3K8GBUi3tX96';
 
@@ -218,7 +218,7 @@ function faqHtml(faqs) {
   return `<div class="faq">${faqs.map(([q, a]) => `<details><summary>${esc(q)}</summary><div class="a">${esc(a)}</div></details>`).join('')}</div>`;
 }
 function ctaHtml(text) {
-  return `<div class="lp-cta"><div><h2>${esc(text)}</h2><p>Reply within 24 hours. WhatsApp +1 (575) 418-4265 · Official.modelcraft3d@gmail.com</p></div><div class="hero-actions"><a class="btn btn-orange" href="/#contact">Get a quote</a><a class="btn btn-wa" href="https://wa.me/15754184265" target="_blank" rel="noopener">WhatsApp</a><a class="btn btn-ghost" href="https://calendar.app.google/p6tHS3K8GBUi3tX96" target="_blank" rel="noopener">Book a call</a></div></div>`;
+  return `<div class="lp-cta"><div><h2>${esc(text)}</h2><p>Reply within 24 hours. WhatsApp +1 (575) 418-4265 · rashid@modelcraft3d.com</p></div><div class="hero-actions"><a class="btn btn-orange" href="/#contact">Get a quote</a><a class="btn btn-wa" href="https://wa.me/15754184265" target="_blank" rel="noopener">WhatsApp</a><a class="btn btn-ghost" href="https://calendar.app.google/p6tHS3K8GBUi3tX96" target="_blank" rel="noopener">Book a call</a></div></div>`;
 }
 function related(exceptSlug) {
   const all = [...services.map(s => ({ slug: s.slug, label: s.name })), ...countries.map(c => ({ slug: c.slug, label: `CAD design ${c.short}` }))].filter(x => x.slug !== exceptSlug);

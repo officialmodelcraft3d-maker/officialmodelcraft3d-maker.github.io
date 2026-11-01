@@ -7,7 +7,7 @@ const compression = require('compression');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const TO = process.env.QUOTE_TO || 'Official.modelcraft3d@gmail.com';
+const TO = process.env.QUOTE_TO || 'rashid@modelcraft3d.com';
 
 app.disable('x-powered-by');
 app.use(compression());
