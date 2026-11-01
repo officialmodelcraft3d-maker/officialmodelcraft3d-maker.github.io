@@ -125,6 +125,11 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rg
 .card .ico{width:46px;height:46px;border-radius:12px;background:var(--ink);display:grid;place-items:center;color:#fff;position:relative}
 .card h3{font-size:19px;font-weight:700;position:relative}
 .card p{color:var(--muted);font-size:15px;position:relative}
+.tools-used{display:flex;flex-wrap:wrap;align-items:center;gap:6px;position:relative}
+.tu-l{flex-basis:100%;font:500 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.tchip{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--ink-2);background:var(--bg-2);border-radius:999px;padding:4px 10px 4px 6px}
+.tchip img{width:18px;height:18px;object-fit:contain;display:block}
+.tchip:not(:has(img)){padding-left:10px}
 .card .fmt{font:400 12px var(--mono);color:var(--blue);letter-spacing:.03em;border-top:1px solid var(--line);padding-top:12px;position:relative}
 @media (max-width:1000px){.cards{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.cards{grid-template-columns:1fr}}
